@@ -22,12 +22,32 @@ if (props.good + props.bad + props.neutral ===0){
   }
   return (
     <div>
-      <StatisticLine text="good" value={props.good} />
-      <StatisticLine text="neutral" value={props.neutral} />
-      <StatisticLine text="bad" value={props.bad} />
-      <StatisticLine text="all" value={props.good + props.bad + props.neutral} />
-      <StatisticLine text="average" value={(props.good * 1 + props.bad * -1) / (props.good + props.bad + props.neutral)} />
-      <StatisticLine text="positive" value={props.good / (props.good + props.bad + props.neutral) * 100 + ' %'} />
+      <table>
+        <tr>
+          <td>good</td>
+          <td>{props.good}</td>
+        </tr>
+        <tr>
+          <td>neutral</td>
+          <td>{props.neutral}</td>
+        </tr>
+        <tr>
+          <td>bad</td>
+          <td>{props.bad}</td>
+        </tr>
+        <tr>
+          <td>all</td>
+          <td>{props.good + props.bad + props.neutral}</td>
+        </tr>
+        <tr>
+          <td>average</td>
+          <td>{(props.good * 1 + props.bad * -1) / (props.good + props.bad + props.neutral)}</td>
+        </tr>
+        <tr>
+          <td>positive</td>
+          <td>{props.good / (props.good + props.bad + props.neutral) * 100 + ' %'}</td>
+        </tr>
+      </table>
     </div>
   )
 }
